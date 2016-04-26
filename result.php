@@ -64,6 +64,12 @@ $_datas = json_decode(result_meeting($_date));
 	<body>
 	
 		<main>
+
+			<div class="load-bar">
+			  <div class="bar"></div>
+			  <div class="bar"></div>
+			  <div class="bar"></div>
+			</div>
 		
 			<div class="cd-main-content cd-result">
 			

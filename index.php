@@ -1,12 +1,4 @@
 <?php
-/*
-if ($_SERVER['DOMAIN_NAME'] == 'mswmedia.net')
-{
-	header('Location: http://mswdogs.ph/');
-	exit;
-}
-*/
-
 
 date_default_timezone_set("Europe/London");
 
@@ -22,8 +14,6 @@ $_current_time = date("H:i:s");
 $_next_race = json_decode(get_next_race($_dateParam, $_current_time));
 
 $_datas = json_decode(meeting($_dateParam, 'list'));
-
-//echo $_SERVER["REQUEST_URI"];
 
 ?>
 		
@@ -69,6 +59,12 @@ $_datas = json_decode(meeting($_dateParam, 'list'));
 	<body>
 	
 		<main>
+
+			<div class="load-bar">
+			  <div class="bar"></div>
+			  <div class="bar"></div>
+			  <div class="bar"></div>
+			</div>
 		
 			<div class="cd-main-content">
       

@@ -24,7 +24,14 @@ include_once('config.php');
     <![endif]-->
   </head>
   <body>
-  
+    
+      <div class="load-bar">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+      </div>
+
+    
     <div class="desk-logo"></div>
     <header class="container-fluid header-container">
       <div class="row">

@@ -60,6 +60,12 @@ $_races = json_decode(race_lists($_raceid,$_date,$_group));
 
 		<main>
 
+			<div class="load-bar">
+			  <div class="bar"></div>
+			  <div class="bar"></div>
+			  <div class="bar"></div>
+			</div>
+
 			<div class="cd-main-content cd-stats">
 
 				<?

@@ -72,6 +72,12 @@ $_race_time = json_decode(fastresult_race_time($_trackID, $_date));
 
 		<main>
 
+			<div class="load-bar">
+			  <div class="bar"></div>
+			  <div class="bar"></div>
+			  <div class="bar"></div>
+			</div>
+
 			<div class="cd-main-content cd-result-card">
 				
 					<?

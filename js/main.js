@@ -6,9 +6,19 @@ jQuery(document).ready(function(event){
   
   console.log('js in!');
   
+    $(".load-bar").delay(1000).fadeOut(function() {
+        $(this).hide(); // Optional if it's going to only be used once.
+    });
+
+
+    //trigger smooth transition from the actual page to the new one 
+	$('main').on('click', '[data-type="x"]', function(event){
+		//event.preventDefault();
+		$(".load-bar").show();
+	});
+
   
-  
-	//trigger smooth transition from the actual page to the new one 
+	//this is the old loader page transition
 	$('main').on('click', '[data-type="xxx"]', function(event){
 		event.preventDefault();
 		isAnimating = false;
@@ -20,17 +30,6 @@ jQuery(document).ready(function(event){
 		firstLoad = true;
 	});
 
-
-	$('#dog-search-button').on('click', function(){
-		//alert('yummy');
-	});
-	/*  $(window).bind('beforeunload',function(){
-
-	//save info somewhere
-
-	return 'are you sure you want to leave?';
-
-	}); */
 
 	//detect the 'popstate' event - e.g. user clicking the back button
 	$(window).on('popstate', function() {

@@ -26,18 +26,18 @@ $_datas = json_decode(predict($_raceid,$_date));
 
     <!-- Bootstrap -->
 
-		<!-- Bootstrap -->
-		<link href="<?=$folder;?>/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap -->
+    <link href="<?=$folder;?>/css/bootstrap.min.css" rel="stylesheet">
 
-		<link rel="stylesheet" href="<?=$folder;?>/css/reset.css"> <!-- CSS reset -->
+    <link rel="stylesheet" href="<?=$folder;?>/css/reset.css"> <!-- CSS reset -->
 
-		<link rel="stylesheet" href="<?=$folder;?>/css/style-anim.css"> <!-- Resource style -->
+    <link rel="stylesheet" href="<?=$folder;?>/css/style-anim.css"> <!-- Resource style -->
 
-		<script src="<?=$folder;?>/js/modernizr.js"></script> <!-- Modernizr -->
+    <script src="<?=$folder;?>/js/modernizr.js"></script> <!-- Modernizr -->
 
-		<link href="<?=$folder;?>/css/font-awesome.min.css" rel="stylesheet">
+    <link href="<?=$folder;?>/css/font-awesome.min.css" rel="stylesheet">
 
-		<link href="<?=$folder;?>/css/style.css" rel="stylesheet">
+    <link href="<?=$folder;?>/css/style.css" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -48,40 +48,46 @@ $_datas = json_decode(predict($_raceid,$_date));
   </head>
   <body>
 
-		<main>
+    <main>
 
-			<div class="cd-main-content cd-predictor">
+      <div class="load-bar">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+      </div>
+
+      <div class="cd-main-content cd-predictor">
       
       <div class="desk-logo"></div>
       <header class="container-fluid header-container">
       <div class="row">
        <?
-		foreach($_datas AS $_fdate => $_fArray){
-		?>  
+    foreach($_datas AS $_fdate => $_fArray){
+    ?>  
       <?
-		foreach($_fArray AS $_name => $_gArray){
-		foreach($_gArray AS $_raceTime => $_tArray){
-	  ?>
+    foreach($_fArray AS $_name => $_gArray){
+    foreach($_gArray AS $_raceTime => $_tArray){
+    ?>
         
         <div class="col-xs-4">
           <strong class="head-title pull-left fs-14"></strong>
         </div>
-		
+    
         <div class="col-xs-4 text-center">
           <strong class="head-title fs-14"><?= $_name ?> <?=date('H:i', strtotime($_raceTime ));?></strong>
         </div>
        
 
-		<div class="col-xs-4 text-center">
-			
-			<a href="<?php echo $folder; ?>/card/<?= $_group ?>/<?= $_raceid ?>/<?= $_fdate ?>" data-type="x">
+    <div class="col-xs-4 text-center">
+      
+      <a href="<?php echo $folder; ?>/card/<?= $_group ?>/<?= $_raceid ?>/<?= $_fdate ?>" data-type="x">
 
 
-				<strong class="head-title pull-right fs-14">DONE</strong>
-				
-			</a>
+        <strong class="head-title pull-right fs-14">DONE</strong>
+        
+      </a>
 
-		</div>
+    </div>
 
       </div>
     </header>
@@ -92,12 +98,12 @@ $_datas = json_decode(predict($_raceid,$_date));
         <div class="predictor-container col-xs-12 no-pad">
           
           <ul class="list-unstyled">
-		  <?
-			
-				foreach($_tArray AS $_dogs => $_sArray){
-		  ?>
-	      <li><div class="anim-cont"  style="left:calc(100% - <?= $_sArray->percent_predict?>%);"><div id="predictor-dog-<?= $_sArray->trap ?>"></div></div></li>
-			<? } } } }?>
+      <?
+      
+        foreach($_tArray AS $_dogs => $_sArray){
+      ?>
+        <li><div class="anim-cont"  style="left:calc(100% - <?= $_sArray->percent_predict?>%);"><div id="predictor-dog-<?= $_sArray->trap ?>"></div></div></li>
+      <? } } } }?>
             
           </ul>
           
@@ -107,14 +113,14 @@ $_datas = json_decode(predict($_raceid,$_date));
       
     </div>
     </div>
-	</main>
+  </main>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="<?=$folder;?>/js/bootstrap.min.js"></script>
-		
-		<script src="<?=$folder;?>/js/main.js"></script> <!-- Resource jQuery -->
+    
+    <script src="<?=$folder;?>/js/main.js"></script> <!-- Resource jQuery -->
     
     <script>
    /*  $('.carousel').carousel({

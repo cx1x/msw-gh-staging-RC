@@ -63,6 +63,12 @@ $_datas = json_decode(result_races($_trackID, $_date));
 
 		<main>
 
+			<div class="load-bar">
+			  <div class="bar"></div>
+			  <div class="bar"></div>
+			  <div class="bar"></div>
+			</div>
+
 			<div class="cd-main-content cd-result-track">
 				<?
 				foreach($_datas AS $_track => $_fArray){
