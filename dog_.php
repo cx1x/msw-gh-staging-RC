@@ -3,7 +3,6 @@
 date_default_timezone_set("Europe/London");
 
 include_once('_inc/function.php');
-include_once('config.php');
 
 $_track = $_GET['track'];
 
@@ -26,31 +25,31 @@ $_details_props = json_decode($_datas->dog_details->properties);
 $_race_props = json_decode($_datas->dog_details->race_props);
 
 $_track_name = array(
-				'CRAYFORD'                        	=> 'Cryfd',
-				'HARLOW'                         	=> 'Harlow',
-				'KINSLEY'                           => 'Kinsly',
-				'NEWCASTLE'                     	=> 'Newc',
-				'NOTTINGHAM'                		=> 'Notts',
-				'PERRYBARR'                     	=> 'PerB',
-				'POOLE'                             => 'Poole',
+				'CRAYFORD'                        => 'Cryfd',
+				'HARLOW'                            => 'Harlow',
+				'KINSLEY'                              => 'Kinsly',
+				'NEWCASTLE'                     => 'Newc',
+				'NOTTINGHAM'                => 'Notts',
+				'PERRYBARR'                     => 'PerB',
+				'POOLE'                                => 'Poole',
 				'SHEFFIELD'                         => 'Sheff',
-				'SITTINGBOURNE'            			=> 'Stgbrn',
-				'SUNDERLAND'                  		=> 'Sland',
-				'TOWCESTER'                     	=> 'Towc',
-				'BELLEVUE'                         	=> 'Bvue',
-				'HALLGREEN'                     	=> 'HallG',
-				'HOVE'                              => 'Hove',
-				'PETERBOROUGH'            			=> 'Pbrgh',
-				'ROMFORD'                        	=> 'Romfd',
-				'SWINDON'                         	=> 'Swndn',
-				'YARMOUTH'                      	=> 'Yrmth',
+				'SITTINGBOURNE'            => 'Stgbrn',
+				'SUNDERLAND'                  => 'Sland',
+				'TOWCESTER'                     => 'Towc',
+				'BELLEVUE'                         => 'Bvue',
+				'HALLGREEN'                     => 'HallG',
+				'HOVE'                                  => 'Hove',
+				'PETERBOROUGH'            => 'Pbrgh',
+				'ROMFORD'                        => 'Romfd',
+				'SWINDON'                         => 'Swndn',
+				'YARMOUTH'                      => 'Yrmth',
 				'HENLOW'                            => 'Hnlow',
-				'MONMORE'                      		=> 'Monmr',
-				'WIMBLEDON'                   		=> 'Wdom',
-				'DONCASTER'                     	=> 'Donc',
-				'MILDENHALL'                    	=> 'Mldhl',
-				'PELAWGRANGE'             			=> 'Pelaw',
-				'SHAWFIELD'                      	=> 'Shawf'
+				'MONMORE'                      => 'Monmr',
+				'WIMBLEDON'                   => 'Wdom',
+				'DONCASTER'                     => 'Donc',
+				'MILDENHALL'                    => 'Mldhl',
+				'PELAWGRANGE'             => 'Pelaw',
+				'SHAWFIELD'                      => 'Shawf'
 			);
 
 ?>
@@ -70,17 +69,17 @@ $_track_name = array(
 		<title>MSW Greyhounds</title>
 
 		<!-- Bootstrap -->
-		<link href="<?=$folder;?>/css/bootstrap.min.css" rel="stylesheet">
+		<link href="/greyhoundbet/css/bootstrap.min.css" rel="stylesheet">
 
-		<link rel="stylesheet" href="<?=$folder;?>/css/reset.css"> <!-- CSS reset -->
+		<link rel="/greyhoundbet/stylesheet" href="css/reset.css"> <!-- CSS reset -->
 
-		<link rel="stylesheet" href="<?=$folder;?>/css/style-anim.css"> <!-- Resource style -->
+		<link rel="/greyhoundbet/stylesheet" href="css/style-anim.css"> <!-- Resource style -->
 
-		<script src="<?=$folder;?>/js/modernizr.js"></script> <!-- Modernizr -->
+		<script src="/greyhoundbet/js/modernizr.js"></script> <!-- Modernizr -->
 
-		<link href="<?=$folder;?>/css/font-awesome.min.css" rel="stylesheet">
+		<link href="/greyhoundbet/css/font-awesome.min.css" rel="stylesheet">
 
-		<link href="<?=$folder;?>/css/style.css" rel="stylesheet">
+		<link href="/greyhoundbet/css/style.css" rel="stylesheet">
 
 		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -92,25 +91,18 @@ $_track_name = array(
 	</head>
 
 	<body>
-	
-		<div class="load-bar">
-			  <div class="bar"></div>
-			  <div class="bar"></div>
-			  <div class="bar"></div>
-		</div>
 
 		<main>
 
 			<div class="cd-main-content cd-dog">
 
-        <div class="desk-logo"></div>
 				<header class="container-fluid header-container head-orange">
 				
 					<div class="row">
 					
 						<div class="col-xs-4">
 						
-							<a href="<?php echo $folder ?>/card/<?=$_datas->dog_details->race_group;?>/<?=$_raceid;?>/<?=$_date;?>" data-type="x">
+							<a href="/greyhoundbet/card/<?=$_datas->dog_details->race_group;?>/<?=$_raceid;?>/<?=$_date;?>" data-type="x">
 							
 								<strong class="head-title pull-left fs-14"><i class="fa fa-chevron-left fs-12"></i> <?=date('h.i', strtotime($_datas->dog_details->race_time));?></strong>
 							
@@ -125,16 +117,8 @@ $_track_name = array(
 						</div>
 
 						<div class="col-xs-4 text-center">
-						
-							<strong class="head-title pull-right fs-14">
 
-								<a href="<?php echo $folder ?>/dogs/<?=$_track;?>/<?=$_raceid;?>/<?=$_date;?>/<?=get_next_dog($_raceid, $_datas->dog_details->trap, 'prev');?>" data-type="x"><i class="fa fa-angle-up fa-2x"></i></a>
-								
-								&nbsp;&nbsp;
-								
-								<a href="<?php echo $folder ?>/dogs/<?=$_track;?>/<?=$_raceid;?>/<?=$_date;?>/<?=get_next_dog($_raceid, $_datas->dog_details->trap, 'next');?>" data-type="x"><i class="fa fa-angle-down fa-2x"></i></a>
-							
-							</strong>
+							<strong class="head-title pull-right fs-14"><i class="fa fa-angle-up fa-2x"></i>&nbsp;&nbsp;<i class="fa fa-angle-down fa-2x"></i></strong>
 
 						</div>
 
@@ -310,34 +294,34 @@ $_track_name = array(
 						</div>
 
 					</div>
+				
+					<footer class="container-fluid footer-container">
+
+						<div class="row">
+
+							<div class="col-xs-4">
+
+								<a href="/greyhoundbet" data-type="x"><span class="foot-icon-cards"></span>Cards</a>
+
+							</div>
+
+							<div class="col-xs-4">
+							
+								<a href="#myModal" data-toggle="modal" data-target="#myModal"><span class="foot-icon-results"></span>Results</a>
+								
+							</div>
+
+							<div class="col-xs-4">
+							
+								<a href="/greyhoundbet/card/<?=$_next_race->race_group;?>/<?=$_next_race->race_uid;?>/<?=$_dateParam;?>" data-type="x"><span class="foot-icon-next"></span>Next Race</a>
+								
+							</div>
+
+						</div>
+						
+					</footer>
 
 				</div>
-        
-        <footer class="container-fluid footer-container">
-
-					<div class="row">
-
-						<div class="col-xs-4">
-
-							<a href="<?php echo $folder ?>/" data-type="x"><span class="foot-icon-cards"></span>Cards</a>
-
-						</div>
-
-						<div class="col-xs-4">
-						
-							<a href="#myModal" data-toggle="modal" data-target="#myModal"><span class="foot-icon-results"></span>Results</a>
-							
-						</div>
-
-						<div class="col-xs-4">
-						
-							<a href="<?php echo $folder ?>/card/<?=$_next_race->race_group;?>/<?=$_next_race->race_uid;?>/<?=$_dateParam;?>" data-type="x"><span class="foot-icon-next"></span>Next Race</a>
-							
-						</div>
-
-					</div>
-					
-				</footer>
 					
 				<!-- Modal -->
 				<div id="myModal" class="modal fade" role="dialog">
@@ -367,7 +351,7 @@ $_track_name = array(
 							
 							<div class="modal-footer">
 							
-								<a class="btn btn-default glyphicon glyphicon-ok" data-dismiss="modal" href="/result/" data-type="x" id="selectDate"></a>
+								<a class="btn btn-default glyphicon glyphicon-ok" data-dismiss="modal" href="result/" data-type="x" id="selectDate"></a>
 								
 							</div>
 							
@@ -385,9 +369,9 @@ $_track_name = array(
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 		
 		<!-- Include all compiled plugins (below), or include individual files as needed -->
-		<script src="<?=$folder;?>/js/bootstrap.min.js"></script>
+		<script src="/greyhoundbet/js/bootstrap.min.js"></script>
 
-		<script src="<?=$folder;?>/js/main.js"></script> <!-- Resource jQuery -->
+		<script src="/greyhoundbet/js/main.js"></script> <!-- Resource jQuery -->
 
 		<script>
 		
