@@ -58,13 +58,14 @@ $_datas = json_decode(meeting($_dateParam, 'list'));
 	
 	<body>
 	
+		<div class="load-bar">
+			  <div class="bar"></div>
+			  <div class="bar"></div>
+			  <div class="bar"></div>
+		</div>
+		
 		<main>
 
-			<div class="load-bar">
-			  <div class="bar"></div>
-			  <div class="bar"></div>
-			  <div class="bar"></div>
-			</div>
 		
 			<div class="cd-main-content">
       
@@ -273,7 +274,8 @@ $_datas = json_decode(meeting($_dateParam, 'list'));
 
 		</main>
 
-		<div class="cd-cover-layer"></div>
+		<div class="cd-cover-layer">
+		</div>
 		
 		<div class="cd-loading-bar"></div>
 

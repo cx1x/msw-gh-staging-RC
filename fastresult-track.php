@@ -60,14 +60,16 @@ $_datas = json_decode(fastresult_races($_trackID, $_date));
 	</head>
 
 	<body>
-
-		<main>
-
-			<div class="load-bar">
+	
+		<div class="load-bar">
 			  <div class="bar"></div>
 			  <div class="bar"></div>
 			  <div class="bar"></div>
 			</div>
+
+		<main>
+
+			
 			
 
 			<div class="cd-main-content cd-fastresult-track">

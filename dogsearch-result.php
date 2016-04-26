@@ -54,15 +54,16 @@ $next_page_url = $folder ."/search-result/". $next_page ."/". $search;
   </head>
   <body>
 
+	
+    <div class="load-bar">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+    </div>
 
     <main>
 
 
-      <div class="load-bar">
-        <div class="bar"></div>
-        <div class="bar"></div>
-        <div class="bar"></div>
-      </div>
 
       <div class="cd-main-content cd-search-result">
 

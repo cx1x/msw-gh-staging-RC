@@ -64,13 +64,15 @@ $_datas = json_decode(races($_track, $_date, $_group));
 	
 	<body>
 	
+		<div class="load-bar">
+			  <div class="bar"></div>
+			  <div class="bar"></div>
+			  <div class="bar"></div>
+		</div>
+	
 		<main>
 
-			<div class="load-bar">
-			  <div class="bar"></div>
-			  <div class="bar"></div>
-			  <div class="bar"></div>
-			</div>	
+				
 		
 			<?
 						

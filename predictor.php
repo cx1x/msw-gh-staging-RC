@@ -47,14 +47,16 @@ $_datas = json_decode(predict($_raceid,$_date));
     <![endif]-->
   </head>
   <body>
-
-    <main>
-
-      <div class="load-bar">
+  
+	<div class="load-bar">
         <div class="bar"></div>
         <div class="bar"></div>
         <div class="bar"></div>
       </div>
+
+    <main>
+
+      
 
       <div class="cd-main-content cd-predictor">
       

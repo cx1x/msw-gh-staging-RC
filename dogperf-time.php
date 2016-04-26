@@ -58,13 +58,14 @@ $_datas = json_decode(meeting($_dateParam,'time'));
 	
 	<body>
 	
+		<div class="load-bar">
+			  <div class="bar"></div>
+			  <div class="bar"></div>
+			  <div class="bar"></div>
+		</div>
+	
 		<main>
 
-			<div class="load-bar">
-			  <div class="bar"></div>
-			  <div class="bar"></div>
-			  <div class="bar"></div>
-			</div>
 		
 			<div class="cd-main-content cd-dogperf-time">
 			

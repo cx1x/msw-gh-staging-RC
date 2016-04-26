@@ -58,14 +58,16 @@ $_datas = json_decode(runners($_raceid,$_date,$_group));
 	</head>
 	
 	<body>
-
-		<main>
-
-			<div class="load-bar">
+	
+		<div class="load-bar">
 			  <div class="bar"></div>
 			  <div class="bar"></div>
 			  <div class="bar"></div>
 			</div>
+
+		<main>
+
+			
 
 			<div class="cd-main-content cd-card">
 			
