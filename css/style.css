@@ -1,15 +1,17 @@
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}article,aside,details,figcaption,figure,footer,header,hgroup,main,menu,nav,section,summary{display:block}audio,canvas,progress,video{display:inline-block;vertical-align:baseline}audio:not([controls]){display:none;height:0}[hidden],template{display:none}a{background-color:transparent}a:active,a:hover{outline:0}abbr[title]{border-bottom:1px dotted}b,strong{font-weight:bold}dfn{font-style:italic}h1{font-size:2em;margin:.67em 0}mark{background:#ff0;color:#000}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sup{top:-0.5em}sub{bottom:-0.25em}img{border:0}svg:not(:root){overflow:hidden}figure{margin:1em 40px}hr{box-sizing:content-box;height:0}pre{overflow:auto}code,kbd,pre,samp{font-family:monospace,monospace;font-size:1em}button,input,optgroup,select,textarea{color:inherit;font:inherit;margin:0}button{overflow:visible}button,select{text-transform:none}button,html input[type="button"],input[type="reset"],input[type="submit"]{-webkit-appearance:button;cursor:pointer}button[disabled],html input[disabled]{cursor:default}button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}input{line-height:normal}input[type="checkbox"],input[type="radio"]{box-sizing:border-box;padding:0}input[type="number"]::-webkit-inner-spin-button,input[type="number"]::-webkit-outer-spin-button{height:auto}input[type="search"]{-webkit-appearance:textfield;box-sizing:content-box}input[type="search"]::-webkit-search-cancel-button,input[type="search"]::-webkit-search-decoration{-webkit-appearance:none}fieldset{border:1px solid silver;margin:0 2px;padding:.35em .625em .75em}legend{border:0;padding:0}textarea{overflow:auto}optgroup{font-weight:bold}table{border-collapse:collapse;border-spacing:0}td,th{padding:0}
 
 body {
-  background: #333;
-  color: #ccc;
-  font: 12px/1.4 Arial, Helvetica, sans-serif;
+  background: #f9fbef;
+  color: #333;
+  font-size: 11px;
+  line-height: 1.4;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
 a,
 a:focus,
 a:active {
-  color: #ccc;
+  color: #666;
   text-decoration: none;
   outline: 0;
 }
@@ -35,7 +37,7 @@ header {
   background: -webkit-linear-gradient(top,  #333333 0%,#111111 100%); /* Chrome10-25,Safari5.1-6 */
   background: linear-gradient(to bottom,  #333333 0%,#111111 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#333333', endColorstr='#111111',GradientType=0 ); /* IE6-9 */
-  border-bottom: 1px solid #111;
+  border-bottom: 1px solid #fff;
   color: #fff;
   overflow: hidden;
   padding: 0 5px;
@@ -142,11 +144,8 @@ footer a:hover {
 
 /* Main Container */
 .main-wrapper {
-  padding-top: 50px;
- /*  margin-bottom: 50px; */
-  padding-bottom: 50px;
-  margin-bottom: 0;
-  margin-top: 0;
+  margin-top: 50px;
+  margin-bottom: 50px;
 }
 
 main .cd-main-content {
@@ -154,7 +153,7 @@ main .cd-main-content {
 }
   
 .search-cont {
-  border-bottom: 1px solid #171717;
+  border-bottom: 1px solid #e8e8e8;
 }
 
 .search-box {
@@ -179,8 +178,8 @@ main .cd-main-content {
 
 .search-box .form-control {
   color: #bf3900;
-  background-color: #111;
-  border: 1px solid #0d0d0d;
+  background-color: #ccc;
+  border: 1px solid #eee;
 }
 
 .search-box .form-control:focus {
@@ -190,10 +189,10 @@ main .cd-main-content {
 .search-box .btn-default {
   color: #fff;
   background: #222;
-  background: -moz-linear-gradient(top,  #333 0%, #222 100%); /* FF3.6-15 */
-  background: -webkit-linear-gradient(top,  #333 0%,#222 100%); /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to bottom,  #333 0%,#222 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  border-color: #141414;
+  background: -moz-linear-gradient(top,  #999 0%, #666 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top,  #999 0%,#666 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, #999 0%,#666 100%);
+    border-color: #eee;
 }
 
 .search-box .btn-default:hover {
@@ -271,8 +270,8 @@ textarea:focus, input:focus, .uneditable-input:focus {
 
 .search-result a,
 .meeting-group a {
-  background: #222;
-  border-bottom: 1px solid #333;
+  background: #f9fbef;
+  border-bottom: 1px solid #ccc;
   cursor: pointer;
   display: block;
   overflow: hidden;
@@ -289,7 +288,7 @@ textarea:focus, input:focus, .uneditable-input:focus {
 }
 
 a .link-item {
-  color: #ccc;
+  color: #333;
 }
 
 .link-item.next-race{
@@ -370,9 +369,9 @@ a .link-item {
 }
 
 .race-time {
-  color: #ccc;
+  color: #333;
   height: 54px;
-  font-size: 18px;
+  font-size: 16px;
   text-align: center;
   line-height: 54px;
 }
@@ -433,20 +432,20 @@ a .link-item {
 }
 
 .race-meeting-4 b,.race-meeting-5 b{
-	 width: 30px;
+   width: 30px;
   display: inline-block; 
 }
 
 .tx-race-1st{
-	font-weight: bold;
+  font-weight: bold;
 }
 
 .race-fc{
-	background: #222;
+  background: #222;
     /* border-bottom: 3px solid #333; */
     display: block;
     overflow: hidden;
-	margin-bottom: 0.5%;
+  margin-bottom: 0.5%;
     padding-bottom: 6px;
 }
 
@@ -461,49 +460,49 @@ a .link-item {
 }
 
 .tb-row span i{
-	line-height: 1.2;
+  line-height: 1.2;
 }
 
 .win-4{
-	margin: 12px 0 0 0;
-	width: 45%;
+  margin: 12px 0 0 0;
+  width: 45%;
     float: left;
 }
 
 .win-5{
-	margin: 12px 0 0 0;
-	width: 50%;
+  margin: 12px 0 0 0;
+  width: 50%;
     float: left;
 }
 
 .win-6{
-	margin: 12px 0 0 0;
-	width: 50%;
+  margin: 12px 0 0 0;
+  width: 50%;
     float: left;
 }
 
 .race-forecast-4{
     width: 50%;
-	margin-top: 5px;
+  margin-top: 5px;
 }
 
 
 .race-forecast-4 p{
-	margin-right: 5px;
+  margin-right: 5px;
     display: inline-block;
-	margin-left: 10px;
+  margin-left: 10px;
 }
 
 .race-meeting-4 .fa-chevron-right:before{
-	    line-height: 7.2;
+      line-height: 7.2;
 }
 
 .race-meeting-5 .fa-chevron-right:before{
-	    line-height: ;
+      line-height: ;
 }
 
 .tx-4{
-	    /* width: 3%; */
+      /* width: 3%; */
     margin: 6px 0 0 0;
     /* float: left; */
     display: inline-block;
@@ -517,7 +516,7 @@ a .link-item {
 }
 
 .statusBox{
-	padding: 10px;
+  padding: 10px;
     text-align: center;
 }
 
@@ -526,23 +525,23 @@ a .link-item {
 }
 
 .race-position{
-	line-height: 85px;
-	font-size: 34px;
-	text-align: right;
+  line-height: 85px;
+  font-size: 34px;
+  text-align: right;
 }
 
 .race-position small{
-	font-size: 12px;
-	vertical-align: top;
+  font-size: 12px;
+  vertical-align: top;
 }
 
 .race-card-4 b{
-	width: 100px;
-	font-size: 18px;
+  width: 100px;
+  font-size: 18px;
 }
 
 .dog-name-details{
-	display: inline-block;
+  display: inline-block;
 }
 
 .meeting-group-2 a {
@@ -555,42 +554,42 @@ a .link-item {
 }
 
 .dog-name{
-	font-size: 15px;
-	font-weight: bold;
-	margin: 0;
+  font-size: 15px;
+  font-weight: bold;
+  margin: 0;
 }
 
 .dog-race-group{
-	display: inline-block;
+  display: inline-block;
 }
 
  .dog-race-detail{
-	 display: inline-block;
-	 line-height: 1.2;
+   display: inline-block;
+   line-height: 1.2;
  }
 
  .dog-col{
-	 width: 50%;
+   width: 50%;
  }
  
  .hr{
-	 width: 100%;
-	 border-bottom: 1px solid #333;
-	 height: 70%;
-	 display: block;
-	 margin-bottom: 5px;
+   width: 100%;
+   border-bottom: 1px solid #333;
+   height: 70%;
+   display: block;
+   margin-bottom: 5px;
  }
  
  .race-meeting-5-i{
-	width: 4%;
-	line-height: 6.2;
+  width: 4%;
+  line-height: 6.2;
  }
 
 /* Bootstrap Nav recolor */
 
 .nav-tabs {
   background: #fc9a12 url(../img/clock-bg-3.png) repeat;
-  border-bottom: 3px solid #333;
+  border-bottom: 3px solid #ccc;
 }
 
 .nav-tabs > li{
@@ -602,9 +601,9 @@ a .link-item {
 }
 
 .nav-tabs li a {
-  color: #ccc;
+  color: #fff;
   cursor: pointer;
-  background: rgba(0,0,0,.7);
+  background: rgba(0,0,0,.3);
   font-size: 16px;
 }
 
@@ -612,13 +611,12 @@ a .link-item {
 .nav-tabs > li.active > a:hover,
 .nav-tabs > li.active > a:focus {
   background: #555555; /* Old browsers */
-  background: -moz-linear-gradient(top,  #555555 0%, #333333 100%); /* FF3.6-15 */
-  background: -webkit-linear-gradient(top,  #555555 0%,#333333 100%); /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to bottom,  #555555 0%,#333333 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#555555', endColorstr='#333333',GradientType=0 ); /* IE6-9 */
+  background: -moz-linear-gradient(top,  #fff 0%, #ccc 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top,  #55fff5555 0%,#ccc 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom,  #fff 0%,#ccc 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 
-  color: #fff;
-  border-color: #333;
+  color: #333;
+  border-color: #ccc;
 }
 
 .nav > li > a:hover,
@@ -631,10 +629,6 @@ a .link-item {
 
   color: #fff;
   border-color: #333;
-}
-
-.nav li:last-child  a, .nav-tabs>li:last-child>a{
-	margin-right: 0px;
 }
 
 /* Dog Numbers Icon */
@@ -688,12 +682,12 @@ a .link-item {
 
 .dog-cards a,
 .dog-cards-2 a {
-  border-bottom: 2px solid #333;
+  border-bottom: 2px solid #ccc;
 }
 
 .race-meeting-2.dog-card,
 .race-meeting-2.dog-card-2 {
-  background: #222;
+  background: #eee;
   float: none;
 }
 
@@ -704,7 +698,7 @@ a .link-item {
 
 .race-meeting-2.dog-card span,
 .race-meeting-2.dog-card-2 span {
-  font-size: 18px;
+  font-size: 15px;
   font-weight: 700;
   line-height: 54px;
 }
@@ -730,12 +724,12 @@ a .link-item {
 }
 
 .dog-card-expand {
-  background: #1a1a1a;
+  background: #f9fbef;
   height: 65px;
 }
 
 .dog-card-expand-2 {
-  background: #1a1a1a;
+  background: #f9fbef;
   height: auto;
   display: block;
   float: none;
@@ -771,7 +765,7 @@ a .link-item {
 
 .dog-card-tb {
   height: auto;
-  background: none repeat scroll 0% 0% #1A1A1A;
+  background: none repeat scroll 0% 0% #e8e8e8;
   overflow: hidden;
   display: block;
   padding: 4px 0;
@@ -928,19 +922,19 @@ a .link-item {
 
 @media screen and (max-width: 2000px) {
   .predictor-container ul {
-	top: 23%;
-	}
+  top: 23%;
+  }
 }
 @media screen and (max-width: 1500px) {
   .predictor-container ul {
-	top: 28%;
-	}
+  top: 28%;
+  }
 }
 
 @media screen and (max-width: 800px) {
   .predictor-container ul {
-	top: 29%;
-	}
+  top: 32%;
+  }
 }
 
 
@@ -1025,15 +1019,15 @@ a .link-item {
   width: 20%;
 }
 .tb-selection {
-	/*  width: 46%; */
+  /*  width: 46%; */
   /* text-align: left;
   vertical-align: bottom; */
     /* margin: 0px 0px; */
    /*  display: inline-block;
     position: relative; */
-	width: 45%;
+  width: 45%;
     /* text-align: center; */
-	text-align: left;
+  text-align: left;
     vertical-align: bottom;
     margin: 3px 0px;
     display: inline-block;
@@ -1068,9 +1062,9 @@ a .link-item {
     /* margin: 0px 0px; */
    /*  display: inline-block;
     position: relative; */
-	width: 45%;
+  width: 45%;
     /* text-align: center; */
-	text-align: left;
+  text-align: left;
     vertical-align: bottom;
     margin: 3px 0px;
     display: inline-block;
@@ -1092,14 +1086,14 @@ a .link-item {
 }
 
 .post-pick{
-	display: block;
-	width:45%; 
-	float:left;
+  display: block;
+  width:45%; 
+  float:left;
 }
 
 .race-count{
-	width:50%; 
-	float:left;
+  width:50%; 
+  float:left;
 }
 
 @media screen and (max-width: 700px) {
@@ -1108,44 +1102,44 @@ a .link-item {
     width: 0%;
   }
   .race-count{
-	width:95%; 
-	}
+  width:95%; 
+  }
   .win-4{
     visibility: hidden;
     width: 0%;
   }
   .win-5{
-	  width: 60%;
+    width: 60%;
   }
   .win-6{
-	  width: 40%;
+    width: 40%;
   }
   .race-count-4 {
     width: 95%;
   }
   .race-time-4 {
-	font-size: 14px;
-	}
-	
-	.race-position {
-	font-size: 17px;
-	margin-right: 8px;
-	}
+  font-size: 14px;
+  }
+  
+  .race-position {
+  font-size: 17px;
+  margin-right: 8px;
+  }
   
    .race-meeting-5 span .dog-result-details{
-	   display: none;
+     display: none;
    }
-	
+  
   .dog-color, .dog-sex, .dog-sire-dam, .dog-date-of-birth, .meeting-result-trainer{
-	  display: none;
-	  visibility: hidden;
-	  width: 0%;
+    display: none;
+    visibility: hidden;
+    width: 0%;
   }
   
   .race-meeting-5 span .col3{
-	    margin-top: 21px;
+      margin-top: 21px;
   }
-	
+  
 }
 
 /* Bar Chart - Dog Stats */
@@ -1156,7 +1150,7 @@ a .link-item {
 .chart-record-today,
 .chart-recent-trap {
   margin: 10px 10px 0 10px;
-  background: #222;
+  background: #ddd;
   min-height: 260px;
   height: auto;
   border-radius: 4px;
@@ -1239,11 +1233,11 @@ a .link-item {
 }
 
 .bg-1a1 {
-  background: #1a1a1a;
+  background: #e5e5e5;
 }
 
 .bg-222 {
-  background: #222;
+  background: #eee;
 }
 
 .bg-333 {
@@ -1251,15 +1245,15 @@ a .link-item {
 }
 
 .bg-444 {
-  background: #444;
+  background: #ccc;
 }
 
 .fs-12 {
-  font-size: 12px;
+  font-size: 11px;
 }
 
 .fs-14 {
-  font-size: 14px;
+  font-size: 12px;
 }
 
 .no-margin {
@@ -1282,13 +1276,46 @@ a .link-item {
   color: #e74500;
 }
 
+/* Light color scheme - RULES OVERRIDE */
+
+header a strong {
+  color: #fff;
+}
+
+.meeting-header.bg-444 {
+  background: #2D1E16;
+}
+
+.meeting-header.bg-444 strong {
+  font-weight: normal;
+  color: #fff;
+}
+
+.link-item .next-race a strong{
+  color: #333 !important;
+}
+
+.search-box input {
+  font-size: 12px;
+}
+
+.dog-card-expand.col-xs-12 {
+  color: #333;
+}
+
+.dog-card-expand.col-xs-12 i {
+  padding-top: 4px;
+}
+
+/* END of OVERRIDE */
+
 .anim-cont,
 .predictor-container ul li img{
-	animation: left-animate 4s;
-	-o-animation: left-animate 4s;
-	-ms-animation: left-animate 4s;
-	-moz-animation: left-animate 4s;
-	-webkit-animation: left-animate 4s;
+  animation: left-animate 4s;
+  -o-animation: left-animate 4s;
+  -ms-animation: left-animate 4s;
+  -moz-animation: left-animate 4s;
+  -webkit-animation: left-animate 4s;
 }
 
 /* From left animation key frames */
@@ -1483,10 +1510,6 @@ End disable animation */
     height: calc(100% - 251px);
     overflow: auto;
     box-shadow: 0 0 25px rgba(0,0,0,0.8);
-	padding-bottom: 0;
-	padding-top: 0;
-	margin-bottom: 50px;
-	margin-top: 50px;
   }
 
   header {
