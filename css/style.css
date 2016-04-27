@@ -108,6 +108,7 @@ footer {
 }
 
 footer a {
+  color: #ccc;
   display: block;
   text-transform: uppercase;
   font-weight: 600;
@@ -604,7 +605,7 @@ a .link-item {
   color: #fff;
   cursor: pointer;
   background: rgba(0,0,0,.3);
-  font-size: 16px;
+  font-size: 14px;
 }
 
 .nav-tabs > li.active > a,
@@ -937,7 +938,6 @@ a .link-item {
   }
 }
 
-
 .predictor-container ul li{
   height: 12%;
   position: relative;
@@ -990,15 +990,16 @@ a .link-item {
 }
 
 .tb-tips .tb-row {
-  background: #222;
+  background: #eee;
   display: block;
   height: 27px;
   line-height: 26px;
-  border-bottom: 1px solid #333;
+  border-bottom: 1px solid #ccc;
 }
 
 .tb-tips .tb-titles {
-  background: #444;
+  background: #2D1E16;
+  color: #fff;
   text-transform: uppercase;
 }
 
@@ -1029,7 +1030,7 @@ a .link-item {
     /* text-align: center; */
   text-align: left;
     vertical-align: bottom;
-    margin: 3px 0px;
+    /* margin: 3px 0px; */
     display: inline-block;
     position: relative;
 }
@@ -1561,6 +1562,22 @@ End disable animation */
     height: 58px;
   }
 
+}
+
+/* Fix predictor dogs when mobile */
+@media screen and (max-width: 500px) {
+  #predictor-dog-1,
+  #predictor-dog-2,
+  #predictor-dog-3,
+  #predictor-dog-4,
+  #predictor-dog-5,
+  #predictor-dog-6 {
+      background-size: 25% 60%;
+  }
+  
+  .predictor-container ul {
+    top: 28%;
+  }
 }
 
 /* MSWPH sidebar embed 292px */
