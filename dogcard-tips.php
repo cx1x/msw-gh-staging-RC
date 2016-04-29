@@ -115,7 +115,7 @@ $_races = json_decode(race_lists($_raceid,$_date,$_group));
 
 										foreach($_race_time AS $_k => $_v){
 
-											echo ($_v->race_uid == $_raceid) ? '<li data-target="'. $folder .'/tips/'.$_group.'/'.$_v->race_uid.'/'.$_v->track_date.'" data-slide-to="0" class="active"></li>' : '<li data-target="/tips/'.$_group.'/'.$_v->race_uid.'/'.$_v->track_date.'" data-slide-to="0"></li>';
+											echo ($_v->race_uid == $_raceid) ? '<li data-target="'. $folder .'/tips/'.$_group.'/'.$_v->race_uid.'/'.$_v->track_date.'" data-slide-to="0" class="active"></li>' : '<a href="/tips/'.$_group.'/'.$_v->race_uid.'/'.$_v->track_date.'" data-type="x"><li data-target="/tips/'.$_group.'/'.$_v->race_uid.'/'.$_v->track_date.'" data-slide-to="0"></li></a>';
 
 										}
 

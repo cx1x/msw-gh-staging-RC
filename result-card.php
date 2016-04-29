@@ -98,7 +98,7 @@ $_race_time = json_decode(result_race_time($_trackID, $_date));
 									
 												foreach($_race_time AS $_k => $_v){
 												
-													echo ($_v->race_uid == $_raceID) ? '<li data-target="'. $folder .'/form/'.$_v->race_uid.'/'.$_v->track_date.'" data-slide-to="0" class="active"></li>' : '<li data-target="'. $folder .'/result-card/'.$_trackID.'/'.$_v->race_uid.'/'.$_v->track_date.'" data-slide-to="0"></li>';
+													echo ($_v->race_uid == $_raceID) ? '<li data-target="'. $folder .'/form/'.$_v->race_uid.'/'.$_v->track_date.'" data-slide-to="0" class="active"></li>' : '<a href="'. $folder .'/result-card/'.$_trackID.'/'.$_v->race_uid.'/'.$_v->track_date.'" data-type="x"><li data-target="'. $folder .'/result-card/'.$_trackID.'/'.$_v->race_uid.'/'.$_v->track_date.'" data-slide-to="0"></li></a>';
 													// echo '<li data-target="/greyhoundbet/form/'.$_v->race_uid.'/'.$_v->track_date.'" data-slide-to="0"></li>';
 													
 												}

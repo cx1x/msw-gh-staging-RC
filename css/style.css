@@ -546,7 +546,7 @@ a .link-item {
 }
 
 .meeting-group-2 a {
-  background: #eee;
+  background: #222;
   border-bottom: 1px solid #333;
   cursor: pointer;
   display: block;
@@ -579,7 +579,6 @@ a .link-item {
    height: 70%;
    display: block;
    margin-bottom: 5px;
-   overflow: hidden;
  }
  
  .race-meeting-5-i{
@@ -1124,12 +1123,8 @@ a .link-item {
   }
   
   .race-position {
-    font-size: 17px;
-    margin-right: 0;
-    width: 6%;
-    text-align: center;
-    margin: 0 1%;
-    padding: 0;
+  font-size: 17px;
+  margin-right: 8px;
   }
   
    .race-meeting-5 span .dog-result-details{
@@ -1144,21 +1139,6 @@ a .link-item {
   
   .race-meeting-5 span .col3{
       margin-top: 21px;
-  }
-  
-  .race-card.fa-chevron-right {
-    margin-left: 0;
-  }
-  
-  .race-card.race-meeting-5 {
-    height: auto;
-    width: 84%;
-  }
-  
-  .race-card.race-meeting-5-i {
-    width: 6%;
-    margin: 0 1%;
-    text-align: center;
   }
   
 }
@@ -1598,39 +1578,6 @@ End disable animation */
   .predictor-container ul {
     top: 28%;
   }
-}
-
-/* Race Card Fixes */
-@media screen and (max-width: 350px) {
-
-  .race-card .win-5,
-  .race-card .win-6 {
-    width: 100%;
-  }
-  
-  .race-card .win-6 {
-    margin-top: 2px;
-  }
-  
-  .race-meeting-5 p.meeting-result-trainer {
-    display: inline;
-    visibility: visible;
-  }
-  
-  .race-meeting-5 span .col3 {
-    margin: 0 0 0 31px;
-  }
-  
-  .race-card.race-meeting-5 {
-    padding-bottom: 5px;
-    width: 80%;
-  }
-  
-  .race-position,
-  .race-card.race-meeting-5-i {
-    width: 8%;
-  }
-  
 }
 
 /* MSWPH sidebar embed 292px */

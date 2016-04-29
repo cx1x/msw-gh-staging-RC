@@ -114,7 +114,7 @@ $_datas = json_decode(runners($_raceid,$_date,$_group));
 								
 											foreach($_race_time AS $_k => $_v){
 											
-												echo ($_v->race_uid == $_raceid) ? '<li data-target="'. $folder .'/card/'.$_group.'/'.$_v->race_uid.'/'.$_v->track_date.'" data-slide-to="0" class="active"></li>' : '<li data-target="'. $folder .'/card/'.$_group.'/'.$_v->race_uid.'/'.$_v->track_date.'" data-slide-to="0"></li>';
+												echo ($_v->race_uid == $_raceid) ? '<li data-target="'. $folder .'/card/'.$_group.'/'.$_v->race_uid.'/'.$_v->track_date.'" data-slide-to="0" class="active"></li>' : '<a href="'. $folder .'/card/'.$_group.'/'.$_v->race_uid.'/'.$_v->track_date.'" data-type="x"><li data-target="'. $folder .'/card/'.$_group.'/'.$_v->race_uid.'/'.$_v->track_date.'" data-slide-to="0"></li></a>';
 												
 												// echo ($_v->race_uid == $_raceID) ? '<li data-target="/greyhoundbet/form/'.$_v->race_uid.'/'.$_v->track_date.'" data-slide-to="0" class="active"></li>' : '<a href="/result-card/'.$_trackID.'/'.$_v->race_uid.'/'.$_v->track_date.'" data-type="x"><li data-target="/result-card/'.$_trackID.'/'.$_v->race_uid.'/'.$_v->track_date.'" data-slide-to="0"></li></a>';
 												

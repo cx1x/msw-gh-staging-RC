@@ -140,7 +140,7 @@ $_track_name = array(
 								
 											foreach($_race_time AS $_k => $_v){
 											
-												echo ($_v->race_uid == $_raceid) ? '<li data-target="/form/'.$_group.'/'.$_v->race_uid.'/'.$_v->track_date.'" data-slide-to="0" class="active"></li>' : '<li data-target="/form/'.$_group.'/'.$_v->race_uid.'/'.$_v->track_date.'" data-slide-to="0"></li>';
+												echo ($_v->race_uid == $_raceid) ? '<li data-target="/form/'.$_group.'/'.$_v->race_uid.'/'.$_v->track_date.'" data-slide-to="0" class="active"></li>' : '<a href="/form/'.$_group.'/'.$_v->race_uid.'/'.$_v->track_date.'" data-type="x"><li data-target="/form/'.$_group.'/'.$_v->race_uid.'/'.$_v->track_date.'" data-slide-to="0"></li></a>';
 												
 											}
 											
