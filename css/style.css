@@ -44,6 +44,11 @@ header {
   position: fixed;
   top: 0px;
   z-index: 100;
+  
+  /* iFrame Fixed bug */
+  -webkit-transform: translate3d(0,0,0);
+  -moz-transform: translate3d(0,0,0); 
+  -o-transform: translate3d(0,0,0); 
 }
 
 
@@ -105,6 +110,11 @@ footer {
   position: fixed;
   bottom: 0px;
   z-index: 100;
+  
+  /* iFrame Fixed bug */
+  -webkit-transform: translate3d(0,0,0);
+  -moz-transform: translate3d(0,0,0); 
+  -o-transform: translate3d(0,0,0); 
 }
 
 footer a {
@@ -145,8 +155,8 @@ footer a:hover {
 
 /* Main Container */
 .main-wrapper {
-  margin-top: 50px;
-  margin-bottom: 50px;
+  padding-top: 50px;
+  padding-bottom: 50px;
 }
 
 main .cd-main-content {
@@ -281,7 +291,7 @@ textarea:focus, input:focus, .uneditable-input:focus {
 
 .search-result a:hover,
 .meeting-group a:hover {
-  background: #111;
+  background: #eee;
 }
 
 .link-item {
@@ -442,7 +452,8 @@ a .link-item {
 }
 
 .race-fc{
-  background: #222;
+  background: #2d1e16;
+  color: #fff;
     /* border-bottom: 3px solid #333; */
     display: block;
     overflow: hidden;
@@ -1125,10 +1136,10 @@ a .link-item {
   
   .race-position {
     font-size: 17px;
-    margin-right: 0;
-    width: 6%;
-    text-align: center;
-    margin: 0 1%;
+    margin-right: 0;		 
+    width: 6%;		
+    text-align: center;		
+    margin: 0 1%;		
     padding: 0;
   }
   
@@ -1295,6 +1306,10 @@ a .link-item {
 
 .modal-body{
   color: #e74500;
+}
+
+.carousel-indicators li {
+  cursor: auto !important;
 }
 
 /* Light color scheme - RULES OVERRIDE */
@@ -1630,6 +1645,11 @@ End disable animation */
   .race-card.race-meeting-5-i {
     width: 8%;
   }
+  
+  .dog-race-detail > p.dog-name {
+    font-size: 12px;
+  }
+  
   
 }
 
