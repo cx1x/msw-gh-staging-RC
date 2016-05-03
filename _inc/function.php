@@ -4,6 +4,19 @@ include_once('connection.php');
 date_default_timezone_set("Europe/London");
 
 
+function data_filter($value) {
+
+	$newVal = trim($value);
+	
+	$newVal = htmlspecialchars($newVal);
+	
+	$newVal = mysql_real_escape_string($newVal);
+	
+	return $newVal;
+}
+
+
+
 $dog_color_attr = array(
 				'BK' => 'Black',
 				'BKBE' => 'Black & Blue',
@@ -56,6 +69,8 @@ function get_next_race($_track_date, $_current_time){
 	
 	$_card_raceTable = 'dog_cards_Race';
 	
+	$_track_date = data_filter($_track_date);
+	
 	$_q = 'SELECT race_uid, race_group, race_time FROM ' . $_card_raceTable . ' WHERE track_date = "'.$_track_date.'" AND race_time >= "'.$_current_time.'" ORDER BY race_time ASC LIMIT 1';
 		
 	$_result = $connect->query($_q);
@@ -77,6 +92,10 @@ function meeting($_track_date, $_viewby){
 	$_card_meetingTable = 'dog_cards_Meeting';
 	
 	$_card_raceTable = 'dog_cards_Race';
+	
+	$_track_date = data_filter($_track_date);
+	
+	$_viewby = data_filter($_viewby);
 	
 	if($_viewby == 'list'){
 
@@ -161,6 +180,12 @@ function races($_trackid,$_track_date,$_group){
 	$_card_meetingTable = 'dog_cards_Meeting';
 	
 	$_card_raceTable = 'dog_cards_Race';
+	
+	$_trackid = data_filter($_trackid);
+	
+	$_track_date = data_filter($_track_date);
+	
+	$_group = data_filter($_group);
 
 	$_q = 'SELECT a.track_date, b.race_group, a.track, a.track_uid, a.id, b.race_uid, b.race_time, b.race_number, a.number_of_races,
 
@@ -210,6 +235,10 @@ function runners($_raceid, $_track_date){
 	$_card_runnerTable = 'dog_cards_Runner';
 
 	$_card_formTable = 'dog_cards_Form';
+	
+	$_raceid = data_filter($_raceid);
+	
+	$_track_date = data_filter($_track_date);
 
 	$_q = 'SELECT c.track_date, c.track_uid, b.race_group, track, post_pick, race_number, a.dog_uid, trap, dog_name, comment, d.form_date, a.race_uid AS race_id, 
 	
@@ -253,6 +282,10 @@ function race_lists($_raceid, $_track_date){
 	$_card_runnerTable = 'dog_cards_Runner';
 
 	$_card_formTable = 'dog_cards_Form';
+	
+	$_raceid = data_filter($_raceid);
+	
+	$_track_date = data_filter($_track_date);
 
 	$_q = 'SELECT c.track_date, c.track_uid, b.race_group, c.track_uid, track, post_pick, race_number, a.dog_uid, trap, dog_name, form_date, form_properties, 
 	
@@ -293,6 +326,12 @@ function race_time($_track_uid, $_track_date, $_group){
 
 	$_card_raceTable = 'dog_cards_Race';
 	
+	$_track_uid = data_filter($_track_uid);
+	
+	$_track_date = data_filter($_track_date);
+	
+	$_group = data_filter($_group);
+	
 	$_q = 'SELECT race_uid, track_date, race_time FROM ' . $_card_raceTable . ' WHERE track_uid="' . $_track_uid . '" AND track_date="' . $_track_date . '" AND race_group="' . $_group . '"';
 	
 	$_result = $connect->query($_q);
@@ -313,6 +352,16 @@ function get_next_raceid($_track_uid, $_racetime, $_track_date, $_except, $_grou
 	$_race_time = array();
 
 	$_card_raceTable = 'dog_cards_Race';
+	
+	$_track_uid = data_filter($_track_uid);
+	
+	$_racetime = data_filter($_racetime);
+	
+	$_track_date = data_filter($_track_date);
+	
+	$_except = data_filter($_except);
+	
+	$_group = data_filter($_group);
 	
 	if($_except == 'less')
 		$_q = 'SELECT race_uid FROM ' . $_card_raceTable . ' WHERE track_uid="' . $_track_uid . '" AND track_date="' . $_track_date . '" AND race_time < "'.$_racetime.'" AND race_group="' . $_group . '" ORDER BY race_number DESC LIMIT 1';
@@ -349,6 +398,14 @@ function get_race_tips($_track_id, $_track_date, $_race_id, $_group){
 	$_card_raceTable = 'dog_cards_Race';
 	
 	$_card_runnerTable = 'dog_cards_Runner';
+	
+	$_track_id = data_filter($_track_id);
+	
+	$_track_date = data_filter($_track_date);
+	
+	$_race_id = data_filter($_race_id);
+	
+	$_group = data_filter($_group);
 
 	$_q = 'SELECT a.race_uid, a.race_time, a.post_pick, b.dog_name, b.trap
 	
@@ -395,6 +452,12 @@ function get_stats($_race_id, $_track_date, $_track){
 	$_performance_runnerTable = 'dog_performance_Runner';
 	
 	$_trapStatsTable = 'trap_stats_Table';
+	
+	$_race_id = data_filter($_race_id);
+	
+	$_track_date = data_filter($_track_date);
+	
+	$_track = data_filter($_track);
 	
 	$_q = "SELECT race_uid, dog_uid, trap, wins, runs, trap_wins,
 			
@@ -454,6 +517,12 @@ function dog_details($_race_id, $_track_date, $_dog_id){
 	
 	$_card_raceTable = 'dog_cards_Race';
 	
+	$_race_id = data_filter($_race_id);
+	
+	$_track_date = data_filter($_track_date);
+	
+	$_dog_id = data_filter($_dog_id);
+	
 	$_q = "SELECT c.dog_name, c.trap, c.properties, c.dog_uid, b.wins, b.runs, b.trap_wins, b.trap_runs,
 	
 			b.grade_wins, b.grade_runs, a.form_date, a.form_properties, d.race_time, d.race_group, d.properties AS race_props, d.track_uid
@@ -506,6 +575,12 @@ function result_dog_details($_race_id, $_track_date, $_dog_id){
 	
 	$_card_raceTable = 'dog_results_Race';
 	
+	$_race_id = data_filter($_race_id);
+	
+	$_track_date = data_filter($_track_date);
+	
+	$_dog_id = data_filter($_dog_id);
+	
 	$_q = "SELECT a.dog_name, a.trap, a.properties, a.dog_uid, c.form_date, c.form_properties, d.race_time, d.race_group, d.properties AS race_props, d.track_uid 
 			
 			FROM " . $_card_runnerTable . " AS a 
@@ -556,6 +631,8 @@ function result_meeting($_track_date){
 	$_card_meetingTable = 'dog_cards_Meeting';
 	
 	$_card_raceTable = 'dog_cards_Race';
+	
+	$_track_date = data_filter($_track_date);
 	
 	if($_track_date == $_date){
 
@@ -690,6 +767,10 @@ function result_races($_trackid,$_track_date){
 	$_result_raceTable = 'dog_results_Race';
 	
 	$_result_meetingTable = 'dog_results_Meeting';
+	
+	$_trackid = data_filter($_trackid);
+	
+	$_track_date = data_filter($_track_date);
 
 	$_q = 'SELECT a.race_uid, a.race_time, a.race_number, a.properties, a.nonrunner, a.reserves, a.vacant_trap, a.forecast_properties, a.tricast_properties,
 
@@ -733,6 +814,10 @@ function fastresult_races($_trackid,$_track_date){
 	$_fastresult_raceTable = 'dog_results_fast_Race';
 
 	$_fastresult_runnerTable = 'dog_results_fast_Runner';
+	
+	$_trackid = data_filter($_trackid);
+	
+	$_track_date = data_filter($_track_date);
 
 	$_q = 'SELECT a.race_uid, a.race_time, a.properties AS race_props, a.forecast_trap,
 	
@@ -779,6 +864,10 @@ function result_runners($_raceid, $_track_date){
 	$_result_raceTable = 'dog_results_Race';
 
 	$_result_runnerTable = 'dog_results_Runner';
+	
+	$_raceid = data_filter($_raceid);
+	
+	$_track_date = data_filter($_track_date);
 
 	$_q = 'SELECT a.race_uid, a.race_time, a.race_number, a.properties AS race_props, a.forecast_properties, a.tricast_properties, b.comment AS dog_comment,
 	
@@ -824,6 +913,10 @@ function fastresult_runners($_raceid, $_track_date){
 	$_fastresult_runnerTable = 'dog_results_fast_Runner';
 
 	$_result_runnerTable = 'dog_results_Runner';
+	
+	$_raceid = data_filter($_raceid);
+	
+	$_track_date = data_filter($_track_date);
 
 	$_q = 'SELECT a.race_uid, a.race_time, a.properties AS race_props, a.forecast_trap, d.properties AS dog_trainer, 
 	
@@ -866,6 +959,10 @@ function result_race_time($_track_uid, $_track_date){
 
 	$_result_raceTable = 'dog_results_Race';
 	
+	$_track_uid = data_filter($_track_uid);
+	
+	$_track_date = data_filter($_track_date);
+	
 	$_q = 'SELECT race_uid, track_date, race_time FROM ' . $_result_raceTable . ' WHERE track_uid="' . $_track_uid . '" AND track_date="' . $_track_date . '"';
 	
 	$_result = $connect->query($_q);
@@ -891,6 +988,10 @@ function fastresult_race_time($_track_uid, $_track_date){
 
 	$_fastresult_raceTable = 'dog_results_fast_Race';
 	
+	$_track_uid = data_filter($_track_uid);
+	
+	$_track_date = data_filter($_track_date);
+	
 	$_q = 'SELECT race_uid, track_date, race_time FROM ' . $_fastresult_raceTable . ' WHERE track_uid="' . $_track_uid . '" AND track_date="' . $_track_date . '" ORDER BY race_time';
 	
 	$_result = $connect->query($_q);
@@ -915,6 +1016,14 @@ function get_next_result_raceid($_track_uid, $_racetime, $_track_date, $_except)
 	$_race_time = array();
 
 	$_result_raceTable = 'dog_results_Race';
+	
+	$_track_uid = data_filter($_track_uid);
+	
+	$_racetime = data_filter($_racetime);
+	
+	$_track_date = data_filter($_track_date);
+	
+	$_except = data_filter($_except);
 	
 	if($_except == 'less')
 		$_q = 'SELECT race_uid FROM ' . $_result_raceTable . ' WHERE track_uid="' . $_track_uid . '" AND track_date="' . $_track_date . '" AND race_time < "'.$_racetime.'" ORDER BY race_number DESC LIMIT 1';
@@ -949,6 +1058,14 @@ function get_next_fastresult_raceid($_track_uid, $_racetime, $_track_date, $_exc
 	$_race_time = array();
 
 	$_fastresult_raceTable = 'dog_results_fast_Race';
+	
+	$_track_uid = data_filter($_track_uid);
+	
+	$_racetime = data_filter($_racetime);
+	
+	$_track_date = data_filter($_track_date);
+	
+	$_except = data_filter($_except);
 	
 	if($_except == 'less')
 		$_q = 'SELECT race_uid FROM ' . $_fastresult_raceTable . ' WHERE track_uid="' . $_track_uid . '" AND track_date="' . $_track_date . '" AND race_time < "'.$_racetime.'" ORDER BY race_time DESC LIMIT 1';
@@ -991,6 +1108,10 @@ function predict($_raceid, $_track_date){
 	$_dog_Runner = 'predictor_dog_Runner';
 
 	$_dog_Race = 'predictor_dog_Race';
+	
+	$_raceid = data_filter($_raceid);
+	
+	$_track_date = data_filter($_track_date);
 
 	$_q = 'SELECT b.track, a.trap, a.percent_predict, a.race_uid AS race_id, b.track_date, b.race_time FROM ' . $_dog_Runner . ' 
 	
@@ -1017,6 +1138,12 @@ function get_next_dog($_raceid, $_currentTrap, $_except){
 	$connect = mysqli_connector();
 	
 	$_performance_runnerTable = 'dog_performance_Runner';
+	
+	$_raceid = data_filter($_raceid);
+	
+	$_currentTrap = data_filter($_currentTrap);
+	
+	$_except = data_filter($_except);
 	
 	$_trap = 'SELECT MAX(trap) AS max_trap FROM '. $_performance_runnerTable .' WHERE race_uid = "' . $_raceid . '"';
 	
@@ -1084,6 +1211,12 @@ function get_next_dog($_raceid, $_currentTrap, $_except){
 
 function search_dog($limit, $offset, $search)
 {
+	
+  $limit = data_filter($limit);
+
+  $offset = data_filter($offset);
+
+  $search = data_filter($search);
 
   $sql = "SELECT distinct (dog_name), dog_uid, properties 
           FROM dog_cards_Runner 
@@ -1125,6 +1258,8 @@ function search_dog($limit, $offset, $search)
 
 function dog_race_history($dog_id)
 {
+	
+    $dog_id = data_filter($dog_id);
 
 	$connect = mysqli_connector();
 			
