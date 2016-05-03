@@ -409,7 +409,23 @@ a .link-item {
 }
 
 .head-clock-wrapper .carousel .carousel-indicators {
-  bottom: 0;
+  bottom: 4px;
+}
+
+.head-clock-wrapper .carousel-indicators li {
+  cursor: auto !important;
+}
+
+.carousel-indicators li {
+  width: 6px;
+  height: 6px;
+  margin: 2px;
+}
+
+.carousel-indicators .active {
+  margin: 1px;
+  width: 8px;
+  height: 8px;
 }
 
 .head-clock-wrapper .carousel-content span {
@@ -419,6 +435,10 @@ a .link-item {
 
 .head-clock-wrapper .carousel-control {
   line-height: 68px;
+}
+
+.head-clock-wrapper .carousel-inner {
+  margin-top: 4px;
 }
 
 .carousel-control.left,
@@ -1306,10 +1326,6 @@ a .link-item {
 
 .modal-body{
   color: #e74500;
-}
-
-.carousel-indicators li {
-  cursor: auto !important;
 }
 
 /* Light color scheme - RULES OVERRIDE */
