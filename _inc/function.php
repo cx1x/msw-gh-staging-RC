@@ -3,14 +3,15 @@ include_once('connection.php');
 
 date_default_timezone_set("Europe/London");
 
-
 function data_filter($value) {
+
+	$connect = mysqli_connector();
 
 	$newVal = trim($value);
 	
 	$newVal = htmlspecialchars($newVal);
 	
-	$newVal = mysql_real_escape_string($newVal);
+	$newVal = mysqli_real_escape_string($connect, $newVal);
 	
 	return $newVal;
 }
