@@ -10,12 +10,13 @@ jQuery(document).ready(function(event){
         $(this).hide(); // Optional if it's going to only be used once.
     });
 
-
     //trigger smooth transition from the actual page to the new one 
 	$('main').on('click', '[data-type="x"]', function(event){
 		//event.preventDefault();
 		$(".load-bar").show();
+    
 	});
+  
 
   
 	//this is the old loader page transition
