@@ -64,7 +64,7 @@ $_race_time = json_decode(fastresult_race_time($_trackID, $_date));
 
 							<div class="col-xs-4">
 							
-								<a href="<?php echo $folder; ?>/fastresult-track/<?=$_trackID;?>/<?=$_date;?>" data-type="x" style="color: #fff;">
+								<a href="<?php echo $folder; ?>/fastresult-track/<?=$_trackID;?>/<?=$_date;?>" data-type="x" style="color: #333;">
 								
 									<strong class="head-title pull-left fs-14"><i class="fa fa-chevron-left fs-12"></i> <?=$_dateLabel;?></strong>
 									
