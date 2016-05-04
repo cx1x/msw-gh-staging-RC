@@ -470,7 +470,7 @@ $_races = json_decode(race_lists($_raceid,$_date,$_group));
 
 						<div class="col-xs-4">
 
-							<a href="<?=$folder;?>/" data-type="x"><span class="foot-icon-cards"></span>Cards</a>
+							<a href="<?=$folder;?>/dogperf-list" data-type="x"><span class="foot-icon-cards"></span>Cards</a>
 
 						</div>
 

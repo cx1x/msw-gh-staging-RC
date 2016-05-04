@@ -211,7 +211,7 @@ $_datas = json_decode(result_races($_trackID, $_date));
 
 						<div class="col-xs-4">
 
-							<a href="<?php echo $folder; ?>/" data-type="x"><span class="foot-icon-cards"></span>Cards</a>
+							<a href="<?php echo $folder; ?>/dogperf-list" data-type="x"><span class="foot-icon-cards"></span>Cards</a>
 
 						</div>
 
