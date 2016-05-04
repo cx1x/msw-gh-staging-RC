@@ -8,6 +8,13 @@ body {
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
+html,
+body {
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+}
+
 a,
 a:focus,
 a:active {
@@ -405,7 +412,11 @@ a .link-item {
 }
 
 .head-orange{
-  background: url(../img/clock-bg.png) center center repeat-x; 
+  background: #333333;
+  background: -moz-linear-gradient(top, #333333 0%, #111111 100%);
+  background: -webkit-linear-gradient(top, #333333 0%,#111111 100%);
+  background: linear-gradient(to bottom, #333333 0%,#111111 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#333333', endColorstr='#111111',GradientType=0 );
 }
 
 .head-clock-wrapper .carousel .carousel-indicators {
@@ -722,6 +733,12 @@ a .link-item {
 .race-meeting-2.dog-card-2 {
   background: #eee;
   float: none;
+  background: #333333;
+  background: -moz-linear-gradient(top, #333333 0%, #111111 100%);
+  background: -webkit-linear-gradient(top, #333333 0%,#111111 100%);
+  background: linear-gradient(to bottom, #333333 0%,#111111 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#333333', endColorstr='#111111',GradientType=0 );
+  color: #FF9E3D;
 }
 
 .race-meeting-2.dog-card div:first-child,
