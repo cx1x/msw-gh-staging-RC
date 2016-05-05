@@ -102,7 +102,21 @@ $next_page_url = $folder ."/search-result/". $next_page ."/". $search;
                 }
               ?>
               <li class="previous <?php echo $previous_disabled; ?>"> <?php echo $previous_start_url; ?> <?php echo $previous_end_url; ?> </li>
-              
+                <?php
+                $next_page = $page + 1;
+
+                $next_disabled = "disabled";
+                $next_start_url = "";
+                $next_end_url = "";
+
+                if ($data['pages'] >= $next_page)
+                {
+                  $next_disabled = "";
+                  $next_start_url = '<a href="'. $folder .'/search-result/'.$next_page.'/'.$search .'" data-type="x">';
+                  $next_end_url = ' Next <i class="fa fa-angle-right"></i> </a>';
+                }
+              ?>
+              <li class="next <?php echo $next_disabled; ?>"><?php echo $next_start_url; ?> <?php echo $next_end_url; ?></li>
               <?php
                 $end_range = $data['offset'] + $limit;
                 $start_range = $data['offset'] + 1;
@@ -130,21 +144,7 @@ $next_page_url = $folder ."/search-result/". $next_page ."/". $search;
               }
               ?>
 
-              <?php
-                $next_page = $page + 1;
-
-                $next_disabled = "disabled";
-                $next_start_url = "";
-                $next_end_url = "";
-
-                if ($data['pages'] >= $next_page)
-                {
-                  $next_disabled = "";
-                  $next_start_url = '<a href="'. $folder .'/search-result/'.$next_page.'/'.$search .'" data-type="x">';
-                  $next_end_url = ' Next <i class="fa fa-angle-right"></i> </a>';
-                }
-              ?>
-              <li class="next <?php echo $next_disabled; ?>"><?php echo $next_start_url; ?> <?php echo $next_end_url; ?></li>
+            
             </ul>
           </div>
         </div>

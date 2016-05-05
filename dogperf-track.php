@@ -32,13 +32,15 @@ $_datas = json_decode(races($_track, $_date, $_group));
   	include_once('header.php');
   	?>
 	
-	<body>
+	<body class="no-scroll">
 	
 		<div class="load-bar">
 			  <div class="bar"></div>
 			  <div class="bar"></div>
 			  <div class="bar"></div>
 		</div>
+    <div class="stop-scroll"></div>
+			
 	
 		<main>
 
@@ -62,7 +64,7 @@ $_datas = json_decode(races($_track, $_date, $_group));
 
 						<div class="col-xs-4">
 						
-							<a href="<?php echo $folder; ?>/dogperf-list" data-type="x" style="color: #fff;">
+							<a href="<?php echo $folder; ?>/dogperf-list" data-type="x" style="color: #333;">
 								
 								<strong class="head-title pull-left fs-14"><i class="fa fa-chevron-left fs-12"></i> <?=$_dateLabel;?></strong>
 							
@@ -178,7 +180,7 @@ $_datas = json_decode(races($_track, $_date, $_group));
 										</span>
 										<span class="post-pick">
 
-											<font style="color:#FFF">'. $curr_tips .'</font>
+											<font style="color:#333">'. $curr_tips .'</font>
 
 										</span>
 										
@@ -210,7 +212,7 @@ $_datas = json_decode(races($_track, $_date, $_group));
 
 						<div class="col-xs-4">
 
-							<a href="<?php echo $folder; ?>/dogperf-list" data-type="x"><span class="foot-icon-cards"></span>Cards</a>
+							<a href="<?php echo $folder; ?>/" data-type="x"><span class="foot-icon-cards"></span>Cards</a>
 
 						</div>
 

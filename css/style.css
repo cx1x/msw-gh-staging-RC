@@ -60,13 +60,18 @@ header {
 
 
 .load-bar {
-  position: absolute;
+  position: fixed;
   margin-top: 0px;
   width: 100%;
   height: 6px;
   background-color: #fdba2c;
   top: 0;
   z-index: 130;
+  
+  /* iFrame Fixed bug */
+  -webkit-transform: translate3d(0,0,0);
+  -moz-transform: translate3d(0,0,0); 
+  -o-transform: translate3d(0,0,0); 
 }
 .bar {
   content: "";
@@ -239,11 +244,12 @@ main .cd-main-content {
   background: linear-gradient(to bottom,  #333 0%,#222 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   border: 1px solid #111;
   border-radius: 8px;
+  color: #ccc;
 }
 
 .page-show {
   line-height: 28px;
-  font-size: 14px;
+  font-size: 12px;
 }
 
 .search-pagination .pager .disabled > a,
@@ -1168,7 +1174,8 @@ a .link-item {
     width: 95%;
   }
   .race-time-4 {
-  font-size: 14px;
+  font-size: 12px;
+  color: #333;
   }
   
   .race-position {
@@ -1218,7 +1225,7 @@ a .link-item {
 .chart-record-class,
 .chart-record-today,
 .chart-recent-trap {
-  margin: 10px 10px 0 10px;
+  margin: 10px;
   background: #ddd;
   min-height: 260px;
   height: auto;

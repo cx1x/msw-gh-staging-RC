@@ -82,7 +82,7 @@ $_datas = json_decode(meeting($_dateParam,'time'));
 						
 							<div class="link-item next-race">							
 								
-								<a href="<?php echo $folder; ?>/card/<?=$_next_race->race_group;?>/<?=$_next_race->race_uid;?>/<?=$_dateParam;?>" data-type="x" style="color: #fff;">
+								<a href="<?php echo $folder; ?>/card/<?=$_next_race->race_group;?>/<?=$_next_race->race_uid;?>/<?=$_dateParam;?>" data-type="x" style="color: #333;">
 							
 									<strong class="pull-left fs-14">Next Race Off</strong>
 									
@@ -157,7 +157,7 @@ $_datas = json_decode(meeting($_dateParam,'time'));
 
 						<div class="col-xs-4">
 
-							<a href="<?php echo $folder; ?>/dogperf-list" data-type="x"><span class="foot-icon-cards"></span>Cards</a>
+							<a href="<?php echo $folder; ?>/" data-type="x"><span class="foot-icon-cards"></span>Cards</a>
 
 						</div>
 
@@ -234,6 +234,21 @@ $_datas = json_decode(meeting($_dateParam,'time'));
 				    var $th = $(this);
 				    $th.val( $th.val().replace(/[^a-zA-Z ]/g, function(str) { alert('You typed " ' + str + ' ".\n\n Please use only letters.'); return ''; } ) );
 				});
+				
+				$('#dog-search-text').keypress(function (e) {
+					var key = e.which;
+					if(key == 13){
+						var str = $.trim( $(this).val() );
+
+						if( str == "" ) {
+							alert('Please enter name of dog or at least the two letters');
+							return false;
+						}
+						else {
+							window.location.replace("<?php echo $folder; ?>/search-result/1/" + str);
+						}
+					}
+				}); 
 
 				$( "#dog-search-button" ).click(function() {
 				  //alert( $("#dog-search-text").val() );
