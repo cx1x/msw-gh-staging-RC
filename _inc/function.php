@@ -249,7 +249,7 @@ function runners($_raceid, $_track_date){
 			
 			as b ON a.race_uid = b.race_uid JOIN ' . $_card_meetingTable . ' as c ON b.track_uid = c.track_uid 
 			
-			WHERE a.race_uid = "' . $_raceid . '" AND c.track_date = "' . $_track_date . '" AND d.comment != "null" AND d.form_date = "' . $_track_date . '"
+			WHERE a.race_uid = "' . $_raceid . '" AND c.track_date = "' . $_track_date . '" AND d.comment != "null"
 			
 			ORDER BY a.trap';
 	
