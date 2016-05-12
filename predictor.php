@@ -47,16 +47,16 @@ $_datas = json_decode(predict($_raceid,$_date));
     foreach($_gArray AS $_raceTime => $_tArray){
     ?>
         
-        <div class="col-xs-4">
+        <div class="col-xs-2">
           <strong class="head-title pull-left fs-14"></strong>
         </div>
     
-        <div class="col-xs-4 text-center">
+        <div class="col-xs-8 text-center">
           <strong class="head-title fs-14"><?= $_name ?> <?=date('H:i', strtotime($_raceTime ));?></strong>
         </div>
        
 
-    <div class="col-xs-4 text-center">
+    <div class="col-xs-2 text-center">
       
       <a href="<?php echo $folder; ?>/card/<?= $_group ?>/<?= $_raceid ?>/<?= $_fdate ?>" data-type="x">
 
@@ -70,8 +70,8 @@ $_datas = json_decode(predict($_raceid,$_date));
       </div>
     </header>
     
-    <div class="main-wrapper container-fluid ">
-      <div class="row">
+    <div class="main-wrapper container-fluid predictor-wrapper">
+      <div class="row predictor-row">
                 
         <div class="predictor-container col-xs-12 no-pad">
           
@@ -114,6 +114,7 @@ $_datas = json_decode(predict($_raceid,$_date));
           //Portrait
           if($(window).width() <= screenHeight) {
             $('.predictor-container').css('background-image', 'url(https://mswmedia.net/greyhoundbet/img/predictor-bg-port.png)');
+            $('.predictor-container').css('height', screenHeight - 50);
           }
           //Landscape
           if($(window).height() <= screenWidth) {
@@ -122,6 +123,7 @@ $_datas = json_decode(predict($_raceid,$_date));
         
       })
       .resize();
+	  
     </script>
   </body>
 </html>

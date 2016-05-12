@@ -8,6 +8,13 @@ body {
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
+html,
+body {
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+}
+
 a,
 a:focus,
 a:active {
@@ -53,13 +60,18 @@ header {
 
 
 .load-bar {
-  position: absolute;
+  position: fixed;
   margin-top: 0px;
   width: 100%;
   height: 6px;
   background-color: #fdba2c;
   top: 0;
   z-index: 130;
+  
+  /* iFrame Fixed bug */
+  -webkit-transform: translate3d(0,0,0);
+  -moz-transform: translate3d(0,0,0); 
+  -o-transform: translate3d(0,0,0); 
 }
 .bar {
   content: "";
@@ -232,11 +244,12 @@ main .cd-main-content {
   background: linear-gradient(to bottom,  #333 0%,#222 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   border: 1px solid #111;
   border-radius: 8px;
+  color: #ccc;
 }
 
 .page-show {
   line-height: 28px;
-  font-size: 14px;
+  font-size: 12px;
 }
 
 .search-pagination .pager .disabled > a,
@@ -405,7 +418,11 @@ a .link-item {
 }
 
 .head-orange{
-  background: url(../img/clock-bg.png) center center repeat-x; 
+  background: #333333;
+  background: -moz-linear-gradient(top, #333333 0%, #111111 100%);
+  background: -webkit-linear-gradient(top, #333333 0%,#111111 100%);
+  background: linear-gradient(to bottom, #333333 0%,#111111 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#333333', endColorstr='#111111',GradientType=0 );
 }
 
 .head-clock-wrapper .carousel .carousel-indicators {
@@ -722,6 +739,12 @@ a .link-item {
 .race-meeting-2.dog-card-2 {
   background: #eee;
   float: none;
+  background: #333333;
+  background: -moz-linear-gradient(top, #333333 0%, #111111 100%);
+  background: -webkit-linear-gradient(top, #333333 0%,#111111 100%);
+  background: linear-gradient(to bottom, #333333 0%,#111111 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#333333', endColorstr='#111111',GradientType=0 );
+  color: #FF9E3D;
 }
 
 .race-meeting-2.dog-card div:first-child,
@@ -966,7 +989,7 @@ a .link-item {
 
 @media screen and (max-width: 800px) {
   .predictor-container ul {
-  top: 32%;
+  top: 29.5%;
   }
 }
 
@@ -1151,7 +1174,8 @@ a .link-item {
     width: 95%;
   }
   .race-time-4 {
-  font-size: 14px;
+  font-size: 12px;
+  color: #333;
   }
   
   .race-position {
@@ -1201,7 +1225,7 @@ a .link-item {
 .chart-record-class,
 .chart-record-today,
 .chart-recent-trap {
-  margin: 10px 10px 0 10px;
+  margin: 10px;
   background: #ddd;
   min-height: 260px;
   height: auto;
