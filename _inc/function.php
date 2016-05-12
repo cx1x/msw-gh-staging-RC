@@ -1119,12 +1119,14 @@ function predict($_raceid, $_track_date){
 			AS a JOIN ' . $_dog_Race . ' as b ON a.race_uid = b.race_uid
 			
 			WHERE a.race_uid = "' . $_raceid . '" AND b.track_date = "' . $_track_date . '"
+
+			GROUP BY a.trap
 			
 			ORDER BY a.trap';
 			
 	$_result = $connect->query($_q);
 	
-	while ($_row = mysqli_fetch_array($_result, MYSQL_ASSOC)) {
+	while ($_row = $_result->fetch_array(MYSQLI_ASSOC)) {	
 	
 		$_runners[$_row['track_date']][$_row['track']][$_row['race_time']][] = array( 
 																				'trap' => $_row['trap'], 'percent_predict' => $_row['percent_predict']);																		
