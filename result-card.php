@@ -198,7 +198,7 @@ $_race_time = json_decode(result_race_time($_trackID, $_date));
 								
 									echo '<div class="statusBox">
 									
-										<span data-eventid="results_title_toggle" id="circle-race-title" class="button">Race ' . $_sArray->race_details->race_number . ' £' . substr($_raceProps->prize_sterling1, 0, strpos($_raceProps->prize_sterling1, ".")) . ' (' . $_raceProps->grade . ') ' . $_raceProps->distance_meters . 'm Going: ' . $_raceProps->going . '</span>
+										<span data-eventid="results_title_toggle" id="circle-race-title" class="button">Race ' . $_sArray->race_details->race_number . ' ' . substr($_raceProps->prize_sterling1, 0, strpos($_raceProps->prize_sterling1, ".")) . ' (' . $_raceProps->grade . ') ' . $_raceProps->distance_meters . 'm Going: ' . $_raceProps->going . '</span>
 										
 									</div>';
 								
@@ -207,7 +207,7 @@ $_race_time = json_decode(result_race_time($_trackID, $_date));
 								
 									echo '<div class="statusBox">
 									
-										<span data-eventid="results_title_toggle" id="circle-race-title" class="button">Race ' . $_sArray->race_details->race_number . ' £' . substr($_raceProps->prize_sterling1, 0, strpos($_raceProps->prize_sterling1, ".")) . ' (' . $_raceProps->grade . ') ' . $_raceProps->distance_meters . 'm</span>
+										<span data-eventid="results_title_toggle" id="circle-race-title" class="button">Race ' . $_sArray->race_details->race_number . ' ' . substr($_raceProps->prize_sterling1, 0, strpos($_raceProps->prize_sterling1, ".")) . ' (' . $_raceProps->grade . ') ' . $_raceProps->distance_meters . 'm</span>
 										
 									</div>';
 								

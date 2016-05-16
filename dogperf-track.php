@@ -173,7 +173,7 @@ $_datas = json_decode(races($_track, $_date, $_group));
 											
 												<strong>Race ' . $_race . ' </strong>';
 												
-												echo ($_group == 'TV') ? '<span><i class="">Grade: (' . $_props->grade . ') Dis: ' . $_props->distance_meters . 'M Winr: &pound;' . $_props->prize . '</i></span>' : '<span><i class="">Grade: (' . $_props->grade . ') Dis: ' . $_props->distance_meters . 'M Winr: &pound;' . $_props->prize . '</i></span>';
+												echo ($_group == 'TV') ? '<span><i class="">Grade: (' . $_props->grade . ') Dis: ' . $_props->distance_meters . 'M Winr: ' . $_props->prize . '</i></span>' : '<span><i class="">Grade: (' . $_props->grade . ') Dis: ' . $_props->distance_meters . 'M Winr: ' . $_props->prize . '</i></span>';
 												
 											echo '</div>
 

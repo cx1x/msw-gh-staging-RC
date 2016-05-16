@@ -175,7 +175,7 @@ $_datas = json_decode(result_races($_trackID, $_date));
 							
 										<div class="race-forecast-4 col-xs-2">
 										
-											<p> Forecast: </p> <b>(' . $_forecastProps[0]->trap1 . 'x' . $_forecastProps[0]->trap2 . ') £' . $_forecastProps[0]->value . '</b>
+											<p> Forecast: </p> <b>(' . $_forecastProps[0]->trap1 . 'x' . $_forecastProps[0]->trap2 . ') ' . $_forecastProps[0]->value . '</b>
 										
 										</div>';
 										
@@ -183,7 +183,7 @@ $_datas = json_decode(result_races($_trackID, $_date));
 										
 											echo '  <div class="race-forecast-4 col-xs-2">
 											
-															<p> Tricast: </p> <b>(' . $_tricastProps[0]->trap1 . 'x' . $_tricastProps[0]->trap2 . ') £' . $_tricastProps[0]->value . '</b>
+															<p> Tricast: </p> <b>(' . $_tricastProps[0]->trap1 . 'x' . $_tricastProps[0]->trap2 . ') ' . $_tricastProps[0]->value . '</b>
 															
 														</div>
 														

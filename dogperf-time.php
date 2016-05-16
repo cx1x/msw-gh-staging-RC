@@ -127,7 +127,7 @@ $_datas = json_decode(meeting($_dateParam,'time'));
 														
 														echo '<span>Race ' . $_v->race_number . '</span>
 														
-														<span><i class="">Grade: (' . $_props->grade . ') Dis: ' . $_props->distance_meters . 'M Winr: &pound;' . $_props->prize . '</i></span>
+														<span><i class="">Grade: (' . $_props->grade . ') Dis: ' . $_props->distance_meters . 'M Winr: ' . $_props->prize . '</i></span>
 														
 													</div>
 													
