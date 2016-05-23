@@ -18,7 +18,7 @@ $time = $time.":00";
 $race_track = str_replace('_', ' ', $race_track);
 
 $card = "/card";
-$host = $site_url . $folder . $card;
+$host = $site_url . $card;
 $return_url = "";
 
 
@@ -31,21 +31,21 @@ echo "time: ".$time."<br />";
 
 
 $_q = "SELECT dcm.track, 
-			   dcm.track_uid as tuid,
-			   dcr.track_uid,
-			   dcr.race_uid,
-			   dcr.race_group,
-			   dcr.race_time,
-			   dcr.track_date
-
+			  dcm.track_uid as tuid,
+			  dcr.track_uid,
+			  dcr.race_uid,
+			  dcr.race_group,
+			  dcr.race_time,
+			  dcr.track_date
 
 		FROM dog_cards_Meeting as dcm
 		LEFT JOIN dog_cards_Race as dcr 
-		ON dcm.track_uid = dcr.track_uid
+			ON dcm.track_uid = dcr.track_uid
+	
 		WHERE dcr.track_date = '$date'
-		AND dcr.race_time = '$time'
-		AND dcm.track = '$race_track' 
-		GROUP BY track ";
+			AND dcr.race_time = '$time'
+			AND dcm.track = '$race_track' 
+			GROUP BY track ";
 
 if ($debug) {
 echo "<br />";
@@ -58,11 +58,14 @@ $_result = $connect->query($_q);
 if ($_result->num_rows == 0) {
 	
 	$return_url = "INVALID_INPUT_URL";
+	echo $return_url;
+	exit;
 }
 else {
 
 	$_row = $_result->fetch_array(MYSQLI_ASSOC);
 	$return_url = $host ."/". $_row['race_group'] ."/". $_row['race_uid'] ."/". $_row['track_date'];
+	//echo $return_url;
+	header("location: ".$return_url);
 }
 
-echo $return_url; 
