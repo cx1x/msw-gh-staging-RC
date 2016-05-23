@@ -8,6 +8,7 @@
 	RewriteRule ^dogperf-list index.php [NC,L]
 	RewriteRule ^dogperf-time dogperf-time.php [NC,L]
 	RewriteRule ^result/(.*) result.php?date=$1 [NC,L]
+	RewriteRule ^redirect/(.*) script.php?p=$1 [NC,L]
 	RewriteRule ^result-track/(.*)/(.*) result-track.php?track=$1&date=$2 [NC,L]
 	RewriteRule ^fastresult-track/(.*)/(.*) fastresult-track.php?track=$1&date=$2 [NC,L]
 	RewriteRule ^result-card/(.*)/(.*)/(.*) result-card.php?track=$1&race=$2&date=$3 [NC,L]
