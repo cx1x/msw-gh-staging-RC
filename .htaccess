@@ -5,7 +5,7 @@
 	RewriteBase /greyhoundbet-staging/
 	#RewriteCond %{HTTP_HOST} !mswmedia.net/greyhoundbet/$ [NC]
 	#RewriteRule ^(.*)$ http://mswdogs.ph/$1 [L,R=301]
-	RewriteRule ^dogperf-list index.php [NC,L]
+	RewriteRule ^dogperf-list home.php [NC,L]
 	RewriteRule ^dogperf-time dogperf-time.php [NC,L]
 	RewriteRule ^result/(.*) result.php?date=$1 [NC,L]
 	RewriteRule ^redirect/(.*) script.php?p=$1 [NC,L]
