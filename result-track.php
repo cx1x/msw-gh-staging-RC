@@ -42,6 +42,18 @@ $_datas = json_decode(result_races($_trackID, $_date));
 
 			<div class="cd-main-content cd-result-track">
 				<?
+
+				if (empty($_datas)){
+
+
+					echo '<div style="font-size: 14px; color: #999; padding: 20px">Error 1004: Please try again later. Redirecting to home page in <strong class="timer_secs" style="color:#FC7012;">5 seconds</strong>.</div>';
+
+				}
+
+
+				else if(!empty($_datas)){ 
+
+
 				foreach($_datas AS $_track => $_fArray){
 				
 				
@@ -231,7 +243,7 @@ $_datas = json_decode(result_races($_trackID, $_date));
 					
 				</footer>
 				
-				<?}?>
+				<?} } ?>
 								
 				<div id="myModal" class="modal fade" role="dialog">
 							
@@ -278,6 +290,47 @@ $_datas = json_decode(result_races($_trackID, $_date));
   		include_once('footer.php');
   		?>
 
+
+
+<script type="text/javascript">
+
+$( document ).ready(function() {
+
+		var t = 4;
+
+		setInterval(function(){
+
+			if(t > 1){
+
+				$(".timer_secs").empty();
+
+				$(".timer_secs").append(t+' seconds');
+
+				t = t-1;		
+
+			}
+
+			else if(t == 1){
+
+				$(".timer_secs").empty();
+
+				$(".timer_secs").append(t+' second');
+
+				t = t-1;
+
+			}
+
+			else if(t < 1){
+
+				history.go(-1);
+
+			}
+
+		},1000);
+
+});
+
+</script>
 	
 
 </body>
