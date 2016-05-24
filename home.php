@@ -179,7 +179,7 @@ if (!isset($_COOKIE['firsttime'])){
 
 						else {
 
-							$_html = '<div class="meeting-header bg-444"><strong class="pull-left" style="font-size: 14px; color: #FC7012; padding: 5px 0;">Error 1001: Please comeback again later</strong></div>';
+							$_html = '<div class="meeting-header bg-444"><strong class="pull-left" style="font-size: 14px; color: #FC7012; padding: 5px 0;">Error 1001: Please try again later.</strong></div>';
 
 						}
 						
