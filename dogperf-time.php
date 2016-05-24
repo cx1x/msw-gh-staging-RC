@@ -78,6 +78,9 @@ $_datas = json_decode(meeting($_dateParam,'time'));
 						<!-- searc div end -->
 
 
+						
+						<?php if(!empty($_datas)){ ?>
+
 						<div class="col-xs-12 bg-222 no-pad">
 						
 							<div class="link-item next-race">							
@@ -94,13 +97,19 @@ $_datas = json_decode(meeting($_dateParam,'time'));
 							
 						</div>
 
+						
+
 						<div class="meeting-group col-xs-12 no-pad">
 						
+							
+
 							<div class="meeting-header bg-444">
 							
 								<strong class="pull-left">Betting races in time order</strong>
 								
 							</div>
+
+							
 							
 							<?
 						
@@ -146,6 +155,14 @@ $_datas = json_decode(meeting($_dateParam,'time'));
 							?>
 
 						</div>
+
+						<?php } else {
+
+
+								echo '<div class="meeting-header"><p class="pull-left" style="font-size: 14px; color: #FC7012; padding: 5px 0;">Error 1003: Please try again later.</p></div>';
+
+
+							}?>
 
 					</div>
 

@@ -84,6 +84,9 @@ if (!isset($_COOKIE['firsttime'])){
 						<!-- searc div end -->
 
 
+
+						<?php if(!empty($_datas)){ ?>
+
 						<div class="col-xs-12 bg-222 no-pad">
 						
 							<div class="link-item next-race">								
@@ -106,7 +109,7 @@ if (!isset($_COOKIE['firsttime'])){
 						$_html = '';
 						
 
-						if(!empty($_datas)){
+						
 
 							foreach($_datas AS $_date => $_fArray){
 
@@ -179,7 +182,7 @@ if (!isset($_COOKIE['firsttime'])){
 
 						else {
 
-							$_html = '<div class="meeting-header bg-444"><strong class="pull-left" style="font-size: 14px; color: #FC7012; padding: 5px 0;">Error 1001: Please try again later.</strong></div>';
+							$_html = '<div class="meeting-header bg-444"><strong class="pull-left" style="font-size: 14px; color: #FC7012; padding: 5px 0;">Error 1001: Please try again later</strong></div>';
 
 						}
 						
