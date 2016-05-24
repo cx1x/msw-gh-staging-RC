@@ -105,70 +105,81 @@ if (!isset($_COOKIE['firsttime'])){
 						//loop
 						$_html = '';
 						
-						foreach($_datas AS $_date => $_fArray){
 
-							foreach($_fArray AS $_group => $_sArray){
-							
-								$_group = $_group;
+						if(!empty($_datas)){
 
-								switch ($_group) {
-									case "TV":
-										$_groupName = 'RP Greyhound TV';
-										break;
-									case "B":
-										$_groupName = 'Bags';
-										break;
-									case "PC":
-										$_groupName = 'Provincial Cards';
-										break;
-									case "MPC":
-										$_groupName = 'Main NON-BAGS Cards';
-										break;
-									default:
-										echo $_group;
-								}
-							
-								$_html .= ' <div class="meeting-group col-xs-12 no-pad">';
+							foreach($_datas AS $_date => $_fArray){
+
+								foreach($_fArray AS $_group => $_sArray){
 								
-								$_html .= ' <div class="meeting-header bg-444">
-							
-												<strong class="pull-left">' . $_groupName . '</strong>
-												
-											</div>';
+									$_group = $_group;
+
+									switch ($_group) {
+										case "TV":
+											$_groupName = 'RP Greyhound TV';
+											break;
+										case "B":
+											$_groupName = 'Bags';
+											break;
+										case "PC":
+											$_groupName = 'Provincial Cards';
+											break;
+										case "MPC":
+											$_groupName = 'Main NON-BAGS Cards';
+											break;
+										default:
+											echo $_group;
+									}
 								
-								foreach($_sArray AS $_track => $_tArray){
+									$_html .= ' <div class="meeting-group col-xs-12 no-pad">';
 									
-									$_endArray = end($_tArray); 
+									$_html .= ' <div class="meeting-header bg-444">
 								
-									$_html .= ' <a href="'. $folder .'/dogperf-track/'. $_tArray[0]->track_uid . '/' . $_dateParam . '/' . $_group . '" data-type="x">
-							
-													<div class="link-item race-meeting">
+													<strong class="pull-left">' . $_groupName . '</strong>
 													
-														<div class="pull-left">
+												</div>';
+									
+									foreach($_sArray AS $_track => $_tArray){
+										
+										$_endArray = end($_tArray); 
+									
+										$_html .= ' <a href="'. $folder .'/dogperf-track/'. $_tArray[0]->track_uid . '/' . $_dateParam . '/' . $_group . '" data-type="x">
+								
+														<div class="link-item race-meeting">
 														
-															<strong>' . ucwords (strtolower ($_track)) . '</strong>';
+															<div class="pull-left">
 															
-															if(date('H:i', strtotime($_tArray[0]->race_time)) == date('H:i', strtotime($_endArray->race_time)))
-															
-																$_html .= ' <span>' . sizeof($_tArray). ' ' . $_tArray[0]->racegroup_type . ' Races <i class="">(' . date('H:i', strtotime($_tArray[0]->race_time)) . ')</i></span>';
+																<strong>' . ucwords (strtolower ($_track)) . '</strong>';
 																
-															else
+																if(date('H:i', strtotime($_tArray[0]->race_time)) == date('H:i', strtotime($_endArray->race_time)))
+																
+																	$_html .= ' <span>' . sizeof($_tArray). ' ' . $_tArray[0]->racegroup_type . ' Races <i class="">(' . date('H:i', strtotime($_tArray[0]->race_time)) . ')</i></span>';
+																	
+																else
+																
+																	$_html .= ' <span>' . sizeof($_tArray). ' ' . $_tArray[0]->racegroup_type . ' Races <i class="">(' . date('H:i', strtotime($_tArray[0]->race_time)) . ' - ' . date('H:i', strtotime($_endArray->race_time)) . ')</i></span>';
+														
+														$_html .= ' </div>
 															
-																$_html .= ' <span>' . sizeof($_tArray). ' ' . $_tArray[0]->racegroup_type . ' Races <i class="">(' . date('H:i', strtotime($_tArray[0]->race_time)) . ' - ' . date('H:i', strtotime($_endArray->race_time)) . ')</i></span>';
-													
-													$_html .= ' </div>
+															<i class="fa fa-chevron-right pull-right fs-14"></i>
+															
+														</div>
 														
-														<i class="fa fa-chevron-right pull-right fs-14"></i>
-														
-													</div>
-													
-												</a>';
+													</a>';
+									
+									}
+									
+									$_html .= ' </div>';
 								
 								}
-								
-								$_html .= ' </div>';
-							
+
 							}
+
+						}
+
+						else {
+
+							$_html = '<div class="meeting-header bg-444"><strong class="pull-left" style="font-size: 14px; color: #FC7012; padding: 5px 0;">Error 1001: Please comeback again later</strong></div>';
 
 						}
 						

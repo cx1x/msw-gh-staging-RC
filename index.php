@@ -12,7 +12,22 @@ $_current_time = date("H:i:s");
 
 $_next_race = json_decode(get_next_race($_dateParam, $_current_time));
 
-header('Location: '. $folder. '/card/'.$_next_race->race_group.'/'.$_next_race->race_uid.'/'.$_dateParam);
+
+if(($_next_race->race_group != '')||($_next_race->race_uid != ''))
+{
+
+	header('Location: '. $folder. '/card/'.$_next_race->race_group.'/'.$_next_race->race_uid.'/'.$_dateParam);
+
+}
+
+else
+{
+
+	header('Location: '.$folder.'/dogperf-list');
+
+}
+
+
 
 exit();
 

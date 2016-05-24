@@ -80,6 +80,10 @@ $_datas = json_decode(result_meeting($_date));
 						//loop
 						$_html = '';
 						
+						if(!empty($_datas)){
+
+
+
 						
 						foreach($_datas AS $_date => $_fArray){
 
@@ -209,6 +213,11 @@ $_datas = json_decode(result_meeting($_date));
 							}
 
 						}
+					}
+					else{
+
+						$_html = '<div class="meeting-header bg-444"><strong class="pull-left" style="font-size: 14px; color: #FC7012; padding: 5px 0;">Error 1002: Please comeback again later</strong></div>';
+					}
 						
 						echo $_html;
 						
