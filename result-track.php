@@ -46,7 +46,7 @@ $_datas = json_decode(result_races($_trackID, $_date));
 				if (empty($_datas)){
 
 
-					echo '<div style="font-size: 14px; color: #999; padding: 20px">Error 1004: Please try again later. Redirecting to home page in <strong class="timer_secs" style="color:#FC7012;">5 seconds</strong>.</div>';
+					echo '<div id="no_item" name="no_item" style="font-size: 14px; color: #999; padding: 20px">Error 1004: Please try again later. Redirecting to home page in <strong class="timer_secs" style="color:#FC7012;">5 seconds</strong>.</div>';
 
 				}
 
@@ -296,6 +296,9 @@ $_datas = json_decode(result_races($_trackID, $_date));
 
 $( document ).ready(function() {
 
+	if($("#no_item").length != 0) {
+
+
 		var t = 4;
 
 		setInterval(function(){
@@ -327,6 +330,8 @@ $( document ).ready(function() {
 			}
 
 		},1000);
+
+	}
 
 });
 
