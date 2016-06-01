@@ -10,3 +10,12 @@ READ ME:
 
 $folder = '/greyhoundbet-staging';
 $site_url = 'https://mswmedia.net' . $folder;
+
+
+if (strpos($folder, 'staging') === false) {
+    error_reporting(0); // production turn-off error
+}
+else
+{
+	error_reporting(1); // show error
+}
